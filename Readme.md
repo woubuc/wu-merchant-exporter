@@ -22,3 +22,7 @@ Configuration is located in `config.yml`. An example config file is provided, ex
 To run the program, simply use the provided start script.
 
     npm start
+
+### Known issues
+
+- Items without a set price will have their price listed as 0
