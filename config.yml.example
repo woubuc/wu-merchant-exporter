@@ -1,0 +1,8 @@
+# Always use absolute paths!
+# Relative paths (including ~ on unix systems) will not work properly.
+
+# Path to the Wurm Unlimited database files
+db_path: path/to/WurmServerLauncher/server/sqlite
+
+# JSON file to write output to
+output_file: /output.json
