@@ -29,7 +29,7 @@ for db in db_names
 
 	# Check if it exists
 	if not exists p
-		console.error 'Could not find ' + db + '.db'
+		console.error 'Could not find ' + p + '. Exiting...'
 		process.exit()
 
 	# Create database connection
