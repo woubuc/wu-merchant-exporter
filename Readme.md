@@ -8,7 +8,7 @@ This application requires the latest [Node.js](http://nodejs.org) v4.2 LTS or hi
 
 ### Installation
 
-Download the [latest release](https://github.com/woubuc/wu-merchant-exporter/releases) and install the dependencies using npm
+Download the [latest release](https://github.com/woubuc/wu-merchant-exporter/releases/latest) and install the dependencies using npm
 
     npm install
 
