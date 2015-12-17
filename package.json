@@ -6,7 +6,7 @@
   "author": "Wouter Buckens <wou.buc@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node node_modules/gulp/bin/gulp compile && node bin/wu-merchant-exporter"
+    "start": "node bin/wu-merchant-exporter"
   },
   "devDependencies": {
     "coffee-script": "^1.10.0",
