@@ -1,6 +1,6 @@
 {
   "name": "wu-merchant-exporter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "author": "Wouter Buckens <wou.buc@gmail.com>",
