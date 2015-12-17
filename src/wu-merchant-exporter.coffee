@@ -39,31 +39,6 @@ for db in db_names
 # Prepare array
 merchants = []
 
-# Function to parse total price into g, s, c and i
-parse_price = (price) ->
-	return no if price is 0
-	obj =
-		total: price
-		g: 0
-		s: 0
-		c: 0
-	while price >= 1000000
-		obj.g++
-		price -= 1000000
-
-	while price >= 10000
-		obj.s++
-		price -= 10000
-
-	while price >= 100
-		obj.c++
-		price -= 100
-
-	obj.i = price
-
-	return obj
-
-
 # Get merchants
 dbs.wurmeconomy.all 'SELECT WURMID, OWNER FROM TRADER WHERE WURMID <> 0', (err, merchants_data) ->
 	return console.error(err) if err
@@ -91,8 +66,7 @@ dbs.wurmeconomy.all 'SELECT WURMID, OWNER FROM TRADER WHERE WURMID <> 0', (err, 
 						output.inventory = item_data.map (i) ->
 							name: i.NAME
 							ql: Math.floor(i.QUALITYLEVEL)
-							price: parse_price(i.PRICE)
-
+							price: i.PRICE
 							rarity: switch i.RARITY
 								when 1 then 'rare'
 								when 2 then 'supreme'
