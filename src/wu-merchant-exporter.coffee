@@ -59,7 +59,7 @@ dbs.wurmeconomy.all 'SELECT WURMID, OWNER FROM TRADER WHERE WURMID <> 0', (err, 
 					output.name = creature_data.NAME
 
 					# Get merchant inventory
-					dbs.wurmitems.all 'SELECT NAME, QUALITYLEVEL, PRICE, RARITY FROM ITEMS WHERE PARENTID = ?', creature_data.INVENTORYID, (err, item_data) ->
+					dbs.wurmitems.all 'SELECT NAME, QUALITYLEVEL, DAMAGE, PRICE, RARITY FROM ITEMS WHERE PARENTID = ?', creature_data.INVENTORYID, (err, item_data) ->
 						return cb(err) if err
 						
 						# Add inventory items to output
@@ -67,6 +67,7 @@ dbs.wurmeconomy.all 'SELECT WURMID, OWNER FROM TRADER WHERE WURMID <> 0', (err, 
 							name: i.NAME
 							ql: Math.floor(i.QUALITYLEVEL)
 							price: i.PRICE
+							dmg: i.DAMAGE
 							rarity: switch i.RARITY
 								when 1 then 'rare'
 								when 2 then 'supreme'
